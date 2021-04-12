@@ -1,0 +1,117 @@
+{
+  "name": "@openmrs/esm-patient-registration-app",
+  "version": "0.3.0",
+  "description": "Patient registration microfrontend for the OpenMRS SPA",
+  "main": "dist/openmrs-esm-patient-registration-app.js",
+  "types": "src/index.ts",
+  "license": "MPL-2.0",
+  "homepage": "https://github.com/openmrs/openmrs-esm-patient-registration#readme",
+  "scripts": {
+    "start": "openmrs develop",
+    "serve": "webpack-dev-server",
+    "debug": "npm run serve",
+    "build": "webpack --mode production",
+    "analyze": "webpack --mode=production --env.analyze=true",
+    "lint": "eslint src --ext tsx",
+    "prettier": "prettier --config prettier.config.js --write \"src/**/*.{ts,tsx}\"",
+    "typescript": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "jest --config jest.config.js --verbose false",
+    "coverage": "npm test -- --coverage"
+  },
+  "browserslist": [
+    "extends browserslist-config-openmrs"
+  ],
+  "keywords": [
+    "openmrs"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && concurrently 'npm:test' 'npm:typescript' 'npm:lint'"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openmrs/openmrs-esm-patient-registration.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openmrs/openmrs-esm-patient-registration/issues"
+  },
+  "dependencies": {
+    "carbon-components-react": "^7.25.0",
+    "formik": "^2.1.5",
+    "lodash-es": "^4.17.15",
+    "systemjs-webpack-interop": "^1.2.1",
+    "yup": "^0.29.1"
+  },
+  "peerDependencies": {
+    "@openmrs/esm-framework": "3.x",
+    "dayjs": "^1.8.16",
+    "react": "^16.13.1",
+    "react-i18next": "^11.7.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/runtime": "^7.12.13",
+    "@carbon/themes": "^10.22.1",
+    "@openmrs/esm-framework": "next",
+    "@testing-library/dom": "^7.24.2",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^9.1.3",
+    "@testing-library/user-event": "^12.1.5",
+    "@types/carbon__icons-react": "^10.19.0",
+    "@types/carbon-components": "^10.23.0",
+    "@types/carbon-components-react": "^7.23.0",
+    "@types/jest": "^24.0.18",
+    "@types/lodash": "^4.14.161",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router": "^5.1.7",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/webpack-env": "^1.15.1",
+    "@types/yup": "^0.29.3",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "browserslist-config-openmrs": "^1.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.0.0",
+    "css-loader": "^3.2.0",
+    "dayjs": "^1.8.16",
+    "eslint": "^6.2.1",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-config-ts-react-important-stuff": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "fork-ts-checker-webpack-plugin": "^1.5.0",
+    "husky": "^3.0.4",
+    "i18next": "^19.7.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
+    "lodash": "^4.17.19",
+    "node-sass": "^4.14.1",
+    "openmrs": "next",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-i18next": "^11.7.2",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.2.0",
+    "sass-loader": "^10.0.5",
+    "style-loader": "^1.0.0",
+    "systemjs-webpack-interop": "^1.1.0",
+    "typescript": "^4.0.3",
+    "webpack": "^4.39.2",
+    "webpack-bundle-analyzer": "^4.4.0",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
